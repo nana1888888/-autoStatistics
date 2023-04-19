@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.excelapplication.mapper.baseMapper">
+    <select id="selected" parameterType="list">
+        <![CDATA[select * from test]]>
+    </select>
+    <select id="selectedCount"  resultType="int">
+        select Count(*) from treelog
+    </select>
+</mapper>
+<!--    <insert id="insertAll"  parameterType="String">
+        insert into tb_bdinfo(
+        BD_REGDATE,
+        BD_INDEX
+        ,BD_BSINDEX
+        <if test="TRANSFERYN!= null and TRANSFERYN!= ''">
+            ,BD_TRANSFERYN
+        </if>
+        <if test="LASTNAME!= null and LASTNAME!= ''">
+            ,BD_LASTNAME
+        </if>
+        <if test="FIRSTNAME!= null and FIRSTNAME!= ''">
+            ,BD_FIRSTNAME
+        </if>
+        <if test="FLIGHTNO!= null and FLIGHTNO!= ''">
+            ,BD_FLIGHTNO
+        </if>
+        <if test="COUNTRY!= null and COUNTRY!= ''">
+            ,BD_COUNTRY
+        </if>
+        <if test="FLIGHTDATE!= null and FLIGHTDATE!= ''">
+            ,BD_FLIGHTDATE
+        </if>
+        <if test="FLIGHTTIME!= null and FLIGHTTIME!= ''">
+            ,BD_FLIGHTTIME
+        </if>
+        <if test="NAME!= null and NAME!= ''">
+            ,BD_NAME
+        </if>
+        <if test="AIRPORTCODE!= null and AIRPORTCODE!= ''">
+            ,BD_AIRPORTCODE
+        </if>
+        <if test="PASSPORTNO!= null and PASSPORTNO!= ''">
+            ,BD_PASSPORTNO
+        </if>
+        ) values(
+        <![CDATA[sysdate]]>
+        <![CDATA[,to_char(sysdate,'yyyymmdd')||(SELECT ROUND (DBMS_RANDOM.VALUE (10000000, 99999999)) FROM DUAL)]]>
+        <![CDATA[,to_char(sysdate,'yyyymmdd')||(SELECT ROUND (DBMS_RANDOM.VALUE (10000000, 99999999)) FROM DUAL)]]>
+        <if test="TRANSFERYN!= null and TRANSFERYN!= ''">
+            ,#{TRANSFERYN}
+        </if>
+        <if test="LASTNAME!= null and LASTNAME!= ''">
+            ,#{LASTNAME}
+        </if>
+        <if test="FIRSTNAME!= null and FIRSTNAME!= ''">
+            ,#{FIRSTNAME}
+        </if>
+        <if test="FLIGHTNO!= null and FLIGHTNO!= ''">
+            ,#{FLIGHTNO}
+        </if>
+        <if test="COUNTRY!= null and COUNTRY!= ''">
+            ,#{COUNTRY}
+        </if>
+        <if test="FLIGHTDATE!= null and FLIGHTDATE!= ''">
+            ,#{FLIGHTDATE}
+        </if>
+        <if test="FLIGHTTIME!= null and FLIGHTTIME!= ''">
+            ,#{FLIGHTTIME}
+        </if>
+        <if test="NAME!= null and NAME!= ''">
+            ,#{NAME}
+        </if>
+        <if test="AIRPORTCODE!= null and AIRPORTCODE!= ''">
+            ,#{AIRPORTCODE}
+        </if>
+        <if test="PASSPORTNO!= null and PASSPORTNO!= ''">
+            ,#{PASSPORTNO}
+        </if>
+                        )
+    </insert>-->
