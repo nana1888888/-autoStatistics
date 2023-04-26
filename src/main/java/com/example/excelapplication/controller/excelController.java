@@ -79,22 +79,59 @@ public class excelController {
            /* form_sheet.getRow(가로).getCell(3).setCellStyle(style);
             form_sheet.getRow(가로).getCell(6).setCellStyle(style);
             form_sheet.getRow(가로).getCell(9).setCellStyle(style);*/
-int i=0;
+
+
+
+  int g=5;
   while (true) {
 
-                 i=i+1;
-               String dd =  form_sheet.getRow(6).getCell(i).getStringCellValue();
+      String dd = form_sheet.getRow(g).getCell(0).getStringCellValue();
+      //경기도 합계
+      if (dd.equals("경기도")) {
+          System.out.println("멈춤");
+          for (int i = 0; i <= 13; i++) {
+              String aa = form_sheet.getRow(g+1).getCell(i).getStringCellValue();
+              System.out.println("while문 루프 ->" + i + "번째");
+              if (aa.equals(monthString)) {
+                  System.out.println("멈춤");
+                  form_sheet.getRow(g+2).getCell(i).setCellValue(date);
+                  g = g + 5;
+              }
 
-                 System.out.println("while문 루프 ->"+i+"번째");
-                 if (dd.equals(monthString)) {
-                     System.out.println("멈춤");
-                     form_sheet.getRow(7).getCell(i).setCellValue(date);
-                     break;
-                 }
-             }
+          }
+          dd = form_sheet.getRow(g).getCell(0).getStringCellValue();
+      } if (dd.equals("충청도")) {
+          System.out.println("멈춤");
+          for (int i = 0; i <= 13; i++) {
+            String  aa = form_sheet.getRow(g+1).getCell(i).getStringCellValue();
+              System.out.println("서울 ->" + i + "번째");
+              if (aa.equals(monthString)) {
+                  System.out.println("멈춤");
+                  form_sheet.getRow(g+2).getCell(i).setCellValue(date);
+                  g = g + 5;
+              }
+
+          }
+          dd = form_sheet.getRow(g).getCell(0).getStringCellValue();}
+
+      if (dd.equals("서울")) {
+          System.out.println("멈춤");
+          for (int i = 0; i <= 13; i++) {
+              String  aa = form_sheet.getRow(g+1).getCell(i).getStringCellValue();
+              System.out.println("서울 ->" + i + "번째");
+              if (aa.equals(monthString)) {
+                  System.out.println("멈춤");
+                  form_sheet.getRow(g+2).getCell(i).setCellValue(date);
+                  break;
+              }
+
+          }break;
+
+      }
 
 
 
+  }
 /*
              //데이터
              // Row_가로 |  Cell_세로
